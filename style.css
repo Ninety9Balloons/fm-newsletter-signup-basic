@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+    --tomato: hsl(4, 100%, 67%);
+    --dark-slate-gray: hsl(234, 29%, 20%);
+    --charcoal-gray: hsl(235, 18%, 26%);
+    --gray: hsl(231, 7%, 60%);
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    width: 100vw;
+}
+
+.modal-container {
+    display: none;
+    height: 100%;
+    width: 100vw;
+    padding: 25px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+
+.modal-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+}
+
+.modal-main img {
+    width: 60px;
+}
+
+.modal-header {
+    margin: 25px 0;
+    line-height: 1;
+}
+
+.modal-main p {
+    line-height: 1.5;
+}
+
+#modal-email {
+    color: var(--dark-slate-gray);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#dismiss-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+.container > * {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.desktop-image {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+    color: var(--dark-slate-gray);
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+li img {
+    width: 20px;
+    margin-right: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#error {
+    color: var(--tomato);
+}
+
+label,
+#error {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+input {
+    /* height: 30px; */
+    padding: 20px 20px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+.error {
+    color: var(--tomato);
+    border: 1px solid var(--tomato);
+    background-color: hsl(4, 90.9%, 91.4%);
+}
+
+button {
+    width: 100%;
+    padding: 20px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin: 15px 0;
+    background-color: var(--dark-slate-gray);
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    filter: brightness(120%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    /* position: absolute; */
+    width: 100%;
+    bottom: 0;
+    margin: 5px auto;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 450px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        flex-direction: row;
+        width: 800px;
+        height: 600px;
+    }
+
+    .img-container {
+        order: 2;
+        width: 50%;
+    }
+
+    .mobile-image {
+        display: none;
+    }
+
+    .desktop-image {
+        display: block;
+        width: 100%;
+    }
+
+    .attribution {
+        position: absolute;
+    }
+
+    .modal-container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0 auto;
+
+        background-color: var(--charcoal-gray);
+    }
+
+    .modal-main {
+        width: 500px;
+        height: 500px;
+        background-color: white;
+        padding: 50px;
+        border-radius: 20px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+    }
+
+    #dismiss-btn {
+        position: relative;
+        margin-top: 40px;
+        width: 100%;
+    }
+}
